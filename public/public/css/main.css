@@ -124,6 +124,8 @@ header p {
     grid-template-rows:5fr 3fr;
     margin-top: 10px;
     grid-gap:10px;
+    padding: 15px 25px;
+    border: solid;
 }
 
 .input-results {
@@ -141,7 +143,7 @@ header p {
 }
 
 .input-results-teams {
-    margin-top: -50px;
+    margin-top: 50px;
 }
 
 .input-results-container {
@@ -150,12 +152,15 @@ header p {
 }
 
 .input-results-score {
-    margin-top: -80px;
+
 }
 
 .input-results-teams p {
     font-size: 70px;
+    margin: 0px;
 }
+
+
 
 .input-results-score p{
     margin-top:0;
@@ -256,6 +261,37 @@ header p {
     display: flex;
     justify-content: space-between;
 }
+
+.team-player-list button {
+    color: #F00;
+    border:none;
+    background-color: #fff;
+    cursor:pointer;
+}
+
+/*--------Results-page-----------------*/
+
+.results {
+    border:solid;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* ==========================================================================
    Helper classes
    ========================================================================== */

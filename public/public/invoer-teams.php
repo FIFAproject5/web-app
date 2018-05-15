@@ -18,7 +18,7 @@
 <div class="container">
     <header>
         <h1>FIFA Dev Edition</h1>
-        <p>Invoer resultaten</p>
+        <p>Invoer teams en spelers</p>
     </header>
     <form action="../app/team_creator.php" method="post" class="team-creator-container">
         <div class="team-creator-flex">
@@ -38,7 +38,7 @@
                     $results = $statement->fetchAll(PDO::FETCH_ASSOC);
 
                     foreach ($results as $result){
-                        echo '<li>'.'<div>'.$result['name'].'<button type="submit" name="delete" value="'. $result['name'] .'">Delete</button>'.'</div>'.'</li>';
+                        echo '<li>'.'<div>'.$result['name'].'<form method="post" action="../app/delete.php">'.'<button type="submit" name="delete" value="'. $result['name'].'">X</button>'.'</div>'.'</li>'.'</form>';
                     }
                     ?>
                 </ul>
@@ -71,7 +71,6 @@
                 <input type="submit" name="createteam">
             </div>
         </div>
-    </form>
 </div>
 
 

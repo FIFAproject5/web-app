@@ -53,22 +53,39 @@
                     </div>
                 </div>
                 <div class="input-results-submit-score">
-                    <ul>
-                        <li>test</li>
-                        <li>test</li>
-                        <li>test</li>
-                    </ul>
                     <input type="submit">
                 </div>
             </div>
         </div>
         <div class="poule">
             <h2>Poulestanden</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae, eum, obcaecati. Laboriosam dolorem in veritatis nemo enim odit repellat, aut id eius sequi nesciunt asperiores quam unde impedit non, ab.</p>
+            <?php
+            require("../app/databaseConnector.php");
+
+            $sql = "SELECT tbl_matches.id, tbl_matches.score_team_a, tbl_teams.name FROM tbl_matches  
+                        INNER JOIN tbl_teams ON tbl_matches.team_id_a=tbl_teams.id";
+            $statement = $database->query($sql);
+
+
+            $results = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+            echo "<ul>";
+            foreach ($results as $result){
+                echo "<li>".$result["name"].""."</li>";
+            }
+            echo "</ul>";
+
+
+            ?>
             <hr>
         </div>
         <div class="time-schedule">
             <h2>Tijdsschema</h2>
+            <div>
+                <h3>Team 1</h3>
+
+            </div>
+
         </div>
     </div>
 </div>
