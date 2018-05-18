@@ -50,6 +50,24 @@
         </div>
         <div class="time-schedule">
             <h2>Tijdsschema</h2>
+            <h3>Team 1</h3>
+            <?php
+            require("../app/databaseConnector.php");
+
+            $sql = "SELECT tbl_matches.start_time, tbl_matches.id, tbl_matches.score_team_a, tbl_teams.name FROM tbl_matches  
+                        INNER JOIN tbl_teams ON tbl_matches.team_id_a=tbl_teams.id";
+            $statement = $database->query($sql);
+
+
+            $results = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+            echo "<div class='time-grid'>";
+            foreach ($results as $result){
+                echo "<div>".$result['name'].$result['start_time']."</div>";
+            }
+            echo "</div>";
+
+            ?>
         </div>
     </div>
 </div>

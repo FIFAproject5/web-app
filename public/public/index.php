@@ -26,11 +26,37 @@
             <div class="input-results-container">
                 <div class="input-results-teams">
                     <select name="Team" id="">
-                        <option value="Selecteer Team">Team 1</option>
+                        <?php
+                        require("../app/databaseConnector.php");
+
+                        $sql = "SELECT * FROM `tbl_teams`";
+                        $statement = $database->query($sql);
+
+
+                        $results = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+                        foreach ($results as $result){
+                            echo "<option>"."$result[name]"."</option>";
+                        }
+
+                        ?>
                     </select>
                     <p>-</p>
                     <select name="Team" id="">
-                        <option value="Selecteer Team">Team 1</option>
+                        <?php
+                        require("../app/databaseConnector.php");
+
+                        $sql = "SELECT * FROM `tbl_teams`";
+                        $statement = $database->query($sql);
+
+
+                        $results = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+                        foreach ($results as $result){
+                            echo "<option>"."$result[name]"."</option>";
+                        }
+
+                        ?>
                     </select>
                 </div>
                 <div class="input-results-score">
@@ -41,14 +67,40 @@
                 <div class="input-results-scorers">
                     <div>
                         <select name="" id="">
-                            <option value="Selecteer scoorder">Team 2</option>
+                            <?php
+                            require("../app/databaseConnector.php");
+
+                            $sql = "SELECT * FROM `tbl_players`";
+                            $statement = $database->query($sql);
+
+
+                            $results = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+                            foreach ($results as $result){
+                                echo "<option>"."$result[first_name]"." "."$result[last_name]"."</option>";
+                            }
+
+                            ?>
                         </select>
                         <input type="submit" value="Add">
                     </div>
                     <div>
                         <input type="submit" value="Add">
                         <select name="" id="scorer">
-                            <option value="">Team 2</option>
+                            <?php
+                            require("../app/databaseConnector.php");
+
+                            $sql = "SELECT * FROM `tbl_players`";
+                            $statement = $database->query($sql);
+
+
+                            $results = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+                            foreach ($results as $result){
+                                echo "<option>"."$result[first_name]"." "."$result[last_name]"."</option>";
+                            }
+
+                            ?>
                         </select>
                     </div>
                 </div>
