@@ -5,6 +5,9 @@ if (isset($_POST['createteam'])) {
     $teamname = $_POST['teamname'];
     $sql = "INSERT INTO `tbl_teams` (`name`) VALUES ('$teamname')";
     $database->query($sql);
+//    fore players
+
+
 }
 
 if (isset($_POST['delete'])){
