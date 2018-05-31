@@ -12,7 +12,7 @@
     <!-- Place favicon.ico in the root directory -->
 
     <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="./css/main.css">
 </head>
 <body>
 <div class="container">
@@ -26,24 +26,34 @@
 
             require("../app/databaseConnector.php");
 
-            $sql = "SELECT tbl_matches.team_id_a, tbl_matches.team_id_b, tbl_teams.name
-                    FROM tbl_matches 
-                    INNER JOIN tbl_teams ON tbl_matches.team_id_a = tbl_teams.id";
+
+            $sql = "SELECT t1.name as team_id_a , t2.name as team_id_b , score_team_a , score_team_b
+                    FROM tbl_matches AS c
+                    LEFT JOIN tbl_teams t1 ON c.team_id_a = t1.id
+                    LEFT JOIN tbl_teams t2 on c.team_id_b = t2.id";
 
             $statement = $database->query($sql);
-            $results = $statement->fetchAll(PDO::FETCH_ASSOC);
+            $results = $statement->fetchAll();
 
-            $sql = "SELECT name , id FROM tbl_teams";
-            $statement = $database->query($sql);
-            $teams = $statement->fetchAll(PDO::FETCH_ASSOC);
-            var_dump($teams);
-            
-
+            echo "<div class='grid_container'>";
             foreach ($results as $result) {
-                echo $result["name"];
+                if ( $result["score_team_a"] > -1){
+
+                    echo "<div class='grid-item'>";
+                    echo $result["team_id_a"];
+                    echo $result["score_team_a"];
+                    echo "</div>";
+
+                    echo "<div class='grid-item1'>";
+                    echo $result["team_id_b"];
+                    echo $result["score_team_b"];
+                    echo "</div>";
+                }
+
             }
 
 
+            echo "</div>";
 
             ?>
         </div>
@@ -58,15 +68,19 @@
             <?php
             require("../app/databaseConnector.php");
 
-            $sql = "SELECT tbl_matches.start_time, tbl_matches.id, tbl_matches.score_team_a, tbl_teams.name FROM tbl_matches  
-                        INNER JOIN tbl_teams ON tbl_matches.team_id_a=tbl_teams.id";
+            $sql = "SELECT t1.name as team_id_a , t2.name as team_id_b , start_time
+                    FROM tbl_matches AS c
+                    LEFT JOIN tbl_teams t1 ON c.team_id_a = t1.id
+                    LEFT JOIN tbl_teams t2 on c.team_id_b = t2.id";
             $statement = $database->query($sql);
 
 
             $results = $statement->fetchAll(PDO::FETCH_ASSOC);
+
             echo "<div class='time-grid'>";
             foreach ($results as $result){
-                echo "<div>".$result['name'].$result['start_time']."</div>";
+                echo "<div>".$result['team_id_a']. " VS ".$result['team_id_b']. " at " . "<br>".$result['start_time']."</div>";
+
             }
             echo "</div>";
 

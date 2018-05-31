@@ -3,7 +3,8 @@
 /*
  * What follows is the result of much research on cross-browser styling.
  * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
- * Kroc Camen, and the H5BP dev community and team.
+ * Kroc Camen, and the H5BP dev community and team. this is a test if edits work
+
  */
 
 /* ==========================================================================
@@ -275,7 +276,11 @@ header p {
     border:solid;
 }
 
-
+.grid_container {
+    background: #FF0000;
+    display: grid;
+    grid-template-columns: auto auto;
+}
 
 
 
