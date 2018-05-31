@@ -154,23 +154,21 @@ session_start();
                 <?php
                 require("../app/databaseConnector.php");
 
-                $sql1 = "SELECT m.id, m.start_time ,t1.name AS team1, t2.name AS team2 
-                         FROM tbl_matches AS m 
-                         LEFT JOIN tbl_teams  t1 ON m.team_id_a=t1.id
-                         LEFT JOIN tbl_teams t2 ON m.team_id_b=t2.id";
-                $statement = $database->query($sql1);
+                $sql = "SELECT t1.name as team_id_a , t2.name as team_id_b , start_time
+                    FROM tbl_matches AS c
+                    LEFT JOIN tbl_teams t1 ON c.team_id_a = t1.id
+                    LEFT JOIN tbl_teams t2 on c.team_id_b = t2.id";
+                $statement = $database->query($sql);
 
 
                 $results = $statement->fetchAll(PDO::FETCH_ASSOC);
 
-                foreach ($results AS $result)
-                {
-                    echo "<div class='time-schedule-display'> 
-                            <div>".$result["team1"]."</div>
-                          </div>";
+                echo "<div class='time-grid'>";
+                foreach ($results as $result){
+                    echo "<div>".$result['team_id_a']. " VS ".$result['team_id_b']. " at " . "<br>".$result['start_time']."</div>";
+
                 }
-
-
+                echo "</div>";
 
                 ?>
             </div>
