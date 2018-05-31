@@ -33,7 +33,11 @@
             $statement = $database->query($sql);
             $results = $statement->fetchAll(PDO::FETCH_ASSOC);
 
-
+            $sql = "SELECT name , id FROM tbl_teams";
+            $statement = $database->query($sql);
+            $teams = $statement->fetchAll(PDO::FETCH_ASSOC);
+            var_dump($teams);
+            
 
             foreach ($results as $result) {
                 echo $result["name"];
@@ -60,7 +64,6 @@
 
 
             $results = $statement->fetchAll(PDO::FETCH_ASSOC);
-
             echo "<div class='time-grid'>";
             foreach ($results as $result){
                 echo "<div>".$result['name'].$result['start_time']."</div>";
