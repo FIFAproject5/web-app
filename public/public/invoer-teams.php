@@ -59,10 +59,13 @@
                             echo '<select name="team-creator" id="team-creator">';
                             echo '<option value="" disabled selected>Select een speler</option>';
                             foreach ($results as $result) {
-                                echo "<option>" . $result["first_name"] . " " . $result["last_name"] . "</option>>";
+                                echo "<option>"
+                                    . $result["first_name"] . " "
+                                    . $result["last_name"] . "</option>";
                             }
                             echo "</select>";
                         }
+
                         ?>
                 </div>
             </div>

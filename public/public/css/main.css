@@ -144,6 +144,12 @@ header p {
 }
 
 .input-results-teams {
+
+}
+
+
+
+.input-results-teams {
     margin-top: 50px;
 }
 
@@ -169,9 +175,14 @@ header p {
     font-weight:bolder;
 }
 
-.input-results-score p:first-child, .input-results-score p:last-child  {
+.input-results-score>p:first-child, .input-results-score p:last-child  {
         border:solid;
         padding: 0 17px;
+}
+
+.input-select {
+    display:flex;
+    flex-direction:column;
 }
 
 .input-results-scorers select {
@@ -182,7 +193,7 @@ header p {
     display:flex;
     align-items:center;
     justify-content: space-around;
-    max-width: 70%;
+    margin-top: 15px;
 }
 
 .input-results-submit-score ul {
@@ -212,6 +223,10 @@ header p {
     top: -31px;
     left: 40px;
     font-size: 22px;
+}
+
+.time-schedule-display {
+    border:solid 2px #000;
 }
 
 /*------------------end-of---input-results------*/
