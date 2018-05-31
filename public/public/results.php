@@ -35,18 +35,24 @@
             $statement = $database->query($sql);
             $results = $statement->fetchAll();
 
-            echo "<div class='grid_container'>";
+            echo "<div class='results-flex'>";
             foreach ($results as $result) {
                 if ( $result["score_team_a"] > -1){
 
-                    echo "<div class='grid-item'>";
-                    echo $result["team_id_a"];
-                    echo $result["score_team_a"];
-                    echo "</div>";
+                    echo "<div class='results-flex-item'>";
+                        echo "<div>";
+                        echo $result["team_id_a"];
+                        echo "</div>";
 
-                    echo "<div class='grid-item1'>";
-                    echo $result["team_id_b"];
-                    echo $result["score_team_b"];
+                        echo "<div>";
+                        echo $result["score_team_a"];
+                        echo "-";
+                        echo $result["score_team_b"];
+                        echo "</div>";
+
+                        echo "<div>";
+                        echo $result["team_id_b"];
+                        echo "</div>";
                     echo "</div>";
                 }
 
@@ -64,7 +70,6 @@
         </div>
         <div class="time-schedule">
             <h2>Tijdsschema</h2>
-            <h3>Team 1</h3>
             <?php
             require("../app/databaseConnector.php");
 
@@ -79,7 +84,7 @@
 
             echo "<div class='time-grid'>";
             foreach ($results as $result){
-                echo "<div>".$result['team_id_a']. " VS ".$result['team_id_b']. " at " . "<br>".$result['start_time']."</div>";
+                echo "<div class='time-grid-item'>"."<div>".$result['team_id_a']."</div>"."<div>".$result['team_id_b']."</div>"."<div>" .$result['start_time']."</div>"."</div>";
 
             }
             echo "</div>";

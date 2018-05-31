@@ -291,14 +291,43 @@ header p {
     border:solid;
 }
 
-.grid_container {
-    background: #FF0000;
-    display: grid;
-    grid-template-columns: auto auto;
+.results-flex {
+    margin-top: 15px;
 }
 
+.results-flex-item {
+    display: flex;
+    justify-content:space-around;
+}
 
+.results-flex-item {
+    margin-top: 5px;
+}
 
+.results-flex-item div {
+    border:solid;
+    padding: 2px 12px;
+}
+
+.time-grid {
+    padding: 15px;
+}
+
+.time-grid-item {
+    display: flex;
+    justify-content: space-around;
+    border-top:solid;
+    border-left:solid;
+    border-right:solid;
+}
+
+.time-grid-item:last-child {
+    border-bottom: solid;
+}
+
+.time-grid-item div {
+    padding: 10px;
+}
 
 
 

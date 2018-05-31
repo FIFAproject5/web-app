@@ -165,7 +165,7 @@ session_start();
 
                 echo "<div class='time-grid'>";
                 foreach ($results as $result){
-                    echo "<div>".$result['team_id_a']. " VS ".$result['team_id_b']. " at " . "<br>".$result['start_time']."</div>";
+                    echo "<div class='time-grid-item'>"."<div>".$result['team_id_a']."</div>"."<div>".$result['team_id_b']."</div>"."<div>" .$result['start_time']."</div>"."</div>";
 
                 }
                 echo "</div>";
