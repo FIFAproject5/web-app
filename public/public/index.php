@@ -31,7 +31,7 @@ session_start();
                 <div class="input-results-teams">
                     <select name="team-a" id="">
                         <?php
-                        require("../app/databaseConnector.php");
+                        require ("../app/DatabaseConnector.php");
 
                         $sql1 = "SELECT m.id, m.start_time ,t1.name AS team1, t2.name AS team2 
                          FROM tbl_matches AS m 
@@ -51,7 +51,7 @@ session_start();
                     <p>-</p>
                     <select name="team-b" id="">
                         <?php
-                        require("../app/databaseConnector.php");
+                        require ("../app/DatabaseConnector.php");
 
                         $sql1 = "SELECT m.id, m.start_time ,t1.name AS team1, t2.name AS team2 
                          FROM tbl_matches AS m 
@@ -83,7 +83,7 @@ session_start();
                     <div>
                         <select name="" id="">
                             <?php
-                            require("../app/databaseConnector.php");
+                            require ("../app/DatabaseConnector.php");
 
                             $sql = "SELECT * FROM `tbl_players`";
                             $statement = $database->query($sql);
@@ -103,7 +103,7 @@ session_start();
                         <input type="submit" value="Add" name="score-team-b">
                         <select name="" id="scorer">
                             <?php
-                            require("../app/databaseConnector.php");
+                            require ("../app/DatabaseConnector.php");
 
                             $sql = "SELECT * FROM `tbl_players`";
                             $statement = $database->query($sql);
@@ -129,7 +129,7 @@ session_start();
         <div class="poule">
             <h2>Poulestanden</h2>
             <?php
-            require("../app/databaseConnector.php");
+            require ("../app/DatabaseConnector.php");
 
             $sql = "SELECT tbl_matches.id, tbl_matches.score_team_a, tbl_teams.name FROM tbl_matches INNER JOIN tbl_teams ON tbl_matches.team_id_a=tbl_teams.id";
             $statement = $database->query($sql);
@@ -152,7 +152,7 @@ session_start();
             <div>
                 <h3>Team 1</h3>
                 <?php
-                require("../app/databaseConnector.php");
+                require ("../app/DatabaseConnector.php");
 
                 $sql = "SELECT t1.name as team_id_a , t2.name as team_id_b , start_time
                     FROM tbl_matches AS c

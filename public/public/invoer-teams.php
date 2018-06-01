@@ -30,7 +30,7 @@
                 <h3>Teams bekijken</h3>
                 <ul class="team-player-list">
                     <?php
-                    require("../app/databaseConnector.php");
+                    require ("../app/DatabaseConnector.php");
 
                     $sql = "SELECT * FROM `tbl_teams` ORDER BY `created_at` DESC";
                     $statement = $database->query($sql);
@@ -47,7 +47,7 @@
                 <h3>2</h3>
                 <div class="select-player-flex">
                         <?php
-                        require("../app/databaseConnector.php");
+                        require ("../app/DatabaseConnector.php");
 
                         $sql = "SELECT * FROM `tbl_players` ORDER BY `id` DESC";
                         $statement = $database->query($sql);

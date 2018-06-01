@@ -24,7 +24,7 @@
         <div class="results">
             <?php
 
-            require("../app/databaseConnector.php");
+            require ("../app/DatabaseConnector.php");
 
 
             $sql = "SELECT t1.name as team_id_a , t2.name as team_id_b , score_team_a , score_team_b
@@ -71,7 +71,7 @@
         <div class="time-schedule">
             <h2>Tijdsschema</h2>
             <?php
-            require("../app/databaseConnector.php");
+            require ("../app/DatabaseConnector.php");
 
             $sql = "SELECT t1.name as team_id_a , t2.name as team_id_b , start_time
                     FROM tbl_matches AS c
