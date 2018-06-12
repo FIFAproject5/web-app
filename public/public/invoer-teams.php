@@ -30,9 +30,10 @@
                 <h3>Teams bekijken</h3>
                 <ul class="team-player-list">
                     <?php
+
                     require ("../app/DatabaseConnector.php");
 
-                    $sql = "SELECT * FROM `tbl_teams` ORDER BY `created_at` DESC";
+                    $sql = "SELECT * FROM `tbl_teams` ORDER BY `id` DESC";
                     $statement = $database->query($sql);
 
                     $results = $statement->fetchAll(PDO::FETCH_ASSOC);

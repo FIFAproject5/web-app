@@ -34,7 +34,7 @@
                             <div class="input-results-teams">
                                 <select name="team-a" id="">
                                     <?php
-                                    require("../app/databaseConnector.php");
+                                    require ("../app/DatabaseConnector.php");
 
                                     $sql1 = "SELECT m.id, m.start_time ,t1.name AS team1, t2.name AS team2 
                          FROM tbl_matches AS m 
@@ -54,7 +54,7 @@
                                 <p>-</p>
                                 <select name="team-b" id="">
                                     <?php
-                                    require("../app/databaseConnector.php");
+                                    require ("../app/DatabaseConnector.php");
 
                                     $sql1 = "SELECT m.id, m.start_time ,t1.name AS team1, t2.name AS team2 
                          FROM tbl_matches AS m 
@@ -86,7 +86,7 @@
                                 <div>
                                     <select name="" id="">
                                         <?php
-                                        require("../app/databaseConnector.php");
+                                        require ("../app/DatabaseConnector.php");
 
                                         $sql = "SELECT * FROM `tbl_players`";
                                         $statement = $database->query($sql);
@@ -106,7 +106,7 @@
                                     <input type="submit" value="Add" name="score-team-b">
                                     <select name="" id="scorer">
                                         <?php
-                                        require("../app/databaseConnector.php");
+                                        require ("../app/DatabaseConnector.php");
 
                                         $sql = "SELECT * FROM `tbl_players`";
                                         $statement = $database->query($sql);
@@ -132,7 +132,7 @@
             <div class="poule">
                 <h2>Poulestanden</h2>
                 <?php
-                require("../app/databaseConnector.php");
+                require ("../app/DatabaseConnector.php");
 
                 $sql = "SELECT tbl_matches.id, tbl_matches.score_team_a, tbl_teams.name FROM tbl_matches INNER JOIN tbl_teams ON tbl_matches.team_id_a=tbl_teams.id";
                 $statement = $database->query($sql);
@@ -155,7 +155,7 @@
                 <div>
                     <h3>Team 1</h3>
                     <?php
-                    require("../app/databaseConnector.php");
+                    require ("../app/DatabaseConnector.php");
 
                     $sql = "SELECT t1.name as team_id_a , t2.name as team_id_b , start_time
                     FROM tbl_matches AS c
@@ -190,7 +190,7 @@
                 <div class="results">
                     <?php
 
-                    require("../app/databaseConnector.php");
+                    require ("../app/DatabaseConnector.php");
 
 
                     $sql = "SELECT t1.name as team_id_a , t2.name as team_id_b , score_team_a , score_team_b
@@ -237,7 +237,7 @@
                 <div class="time-schedule">
                     <h2>Tijdsschema</h2>
                     <?php
-                    require("../app/databaseConnector.php");
+                    require ("../app/DatabaseConnector.php");
 
                     $sql = "SELECT t1.name as team_id_a , t2.name as team_id_b , start_time
                     FROM tbl_matches AS c
@@ -276,9 +276,9 @@
                         <h3>Teams bekijken</h3>
                         <ul class="team-player-list">
                             <?php
-                            require("../app/databaseConnector.php");
+                            require ("../app/DatabaseConnector.php");
 
-                            $sql = "SELECT * FROM `tbl_teams` ORDER BY `created_at` DESC";
+                            $sql = "SELECT * FROM `tbl_teams` ORDER BY `id` DESC";
                             $statement = $database->query($sql);
 
                             $results = $statement->fetchAll(PDO::FETCH_ASSOC);
@@ -293,7 +293,7 @@
                         <h3>2</h3>
                         <div class="select-player-flex">
                             <?php
-                            require("../app/databaseConnector.php");
+                            require ("../app/DatabaseConnector.php");
 
                             $sql = "SELECT * FROM `tbl_players` ORDER BY `id` DESC";
                             $statement = $database->query($sql);

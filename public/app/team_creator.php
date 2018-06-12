@@ -1,5 +1,5 @@
 <?php
-require("databaseconnector.php");
+require ("../app/DatabaseConnector.php");
 
 if (isset($_POST['createteam'])) {
     $teamname = $_POST['teamname'];
@@ -20,4 +20,4 @@ $selectplayers= $_POST["team-creator"];
 
 var_dump($selectplayers);
 
-header("Location:../public/invoer-teams.php");
+header("Location:../public/main.php");

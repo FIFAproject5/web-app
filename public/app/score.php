@@ -1,35 +1,35 @@
 <?php
-require("../app/databaseConnector.php");
+require ("../app/DatabaseConnector.php");
 
 session_start();
 
 if (isset($_POST['score-team-a'])){
     $_SESSION['player-score-a']++;
-    header("Location:../public/index.php");
+    header("Location:../public/main.php");
 }
 
 if (isset($_POST['score-team-b'])){
     $_SESSION['player-score-b']++;
-    header("Location:../public/index.php");
+    header("Location:../public/main.php");
 }
 
 if (isset($_POST['reset-score'])){
     $_SESSION['player-score-a']=0;
     $_SESSION['player-score-b']=0;
 
-    header("Location:../public/index.php");
+    header("Location:../public/main.php");
 }
 
 if (isset($_POST['team-a-select'])){
     $selectedteama = $_POST['team-a'];
     $_SESSION[$selectedteama];
-    header("Location:../public/index.php");
+    header("Location:../public/main.php");
 }
 
 if (isset($_POST['team-b-select'])){
     $selectedteamb = $_POST['team-b'];
     $_SESSION[$selectedteamb];
-    header("Location:../public/index.php");
+    header("Location:../public/main.php");
 }
 
 
@@ -44,5 +44,5 @@ if (isset($_POST['send-score'])){
 
     var_dump($results['id']);
 
-    header("Location:../public/index.php");
+    header("Location:../public/main.php");
 }
